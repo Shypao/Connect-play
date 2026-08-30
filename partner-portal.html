@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Connect &amp; Play partner workspace for booking, queueing, and tournament management.">
+<title>Partner Portal — Connect&amp;Play</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="connect-play-cp-mark-v1.png">
+<style>
+:root{--bg:#f4f1ef;--card:#fff;--ink:#211f20;--muted:#706a6c;--line:#e5dedb;--red:#bd3e48;--red-dark:#982f38;--red-soft:#f8e8ea;--dark:#242122;--green:#2f775c;--green-soft:#e9f4ef;--amber:#916b28;--amber-soft:#fbf1dc;--shadow:0 22px 70px rgba(37,31,32,.1);--display:'Manrope',sans-serif;--body:'DM Sans',sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;background:var(--bg);color:var(--ink);font-family:var(--body);line-height:1.5;-webkit-font-smoothing:antialiased}button,input,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}h1,h2,h3{font-family:var(--display);line-height:1.08;letter-spacing:-.035em}.hidden{display:none!important}.btn{min-height:44px;border:0;border-radius:12px;padding:11px 17px;font-weight:800}.btn-red{background:var(--red);color:#fff;box-shadow:0 9px 22px rgba(189,62,72,.2)}.btn-red:hover{background:var(--red-dark)}.btn-light{background:#fff;border:1px solid var(--line);color:var(--ink)}.btn-dark{background:var(--dark);color:#fff}.prototype-banner{background:#342f30;color:#d9d2d4;text-align:center;padding:9px 18px;font-size:12px}.prototype-banner b{color:#fff}.login-shell{min-height:calc(100vh - 36px);display:grid;grid-template-columns:1.05fr .95fr}.login-story{background:var(--dark);color:#fff;padding:54px clamp(28px,6vw,86px);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between}.login-story::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-210px;top:-190px;background:radial-gradient(circle,rgba(189,62,72,.48),transparent 68%)}.brand-logo{width:185px;height:58px;object-fit:contain;object-position:left center;filter:brightness(0) invert(1);position:relative}.story-copy{max-width:650px;position:relative}.story-copy small{color:#e8a4aa;text-transform:uppercase;letter-spacing:.13em;font-weight:800}.story-copy h1{font-size:clamp(46px,6vw,82px);margin-top:18px}.story-copy h1 span{color:#e8a4aa}.story-copy p{max-width:540px;margin-top:22px;color:#c3bcbe;font-size:17px}.story-modules{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}.story-modules span{border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:9px 13px;font-size:12px;color:#ded8da}.story-foot{position:relative;color:#91898b;font-size:12px}.login-panel{display:grid;place-items:center;padding:48px 28px}.login-card{width:min(470px,100%);background:var(--card);border:1px solid var(--line);border-radius:25px;padding:34px;box-shadow:var(--shadow)}.login-card h2{font-size:34px}.login-card>p{color:var(--muted);margin-top:9px}.demo-note{background:var(--amber-soft);color:#73551e;border-radius:12px;padding:12px 14px;font-size:12px;margin-top:20px}.field{margin-top:16px}.field label{display:block;color:var(--muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:7px}.field input,.field select{width:100%;height:48px;border:1px solid var(--line);background:#fff;border-radius:11px;padding:0 13px;outline:none;color:var(--ink)}.field input:focus,.field select:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(189,62,72,.1)}.login-submit{width:100%;margin-top:22px}.login-links{display:flex;justify-content:space-between;gap:14px;margin-top:18px;font-size:12px;color:var(--muted)}.login-links a:hover{color:var(--red)}
+.portal{min-height:100vh}.topbar{height:76px;background:rgba(255,255,255,.92);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)}.topbar-logo{width:156px;height:48px;object-fit:contain}.top-actions{display:flex;align-items:center;gap:12px}.workspace-chip{display:flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:700}.workspace-dot{width:9px;height:9px;border-radius:50%;background:var(--red)}.portal-layout{display:grid;grid-template-columns:238px 1fr;min-height:calc(100vh - 76px)}.sidebar{background:var(--dark);color:#fff;padding:28px 18px;display:flex;flex-direction:column}.venue-id{padding:0 10px 24px;border-bottom:1px solid rgba(255,255,255,.1)}.venue-id small{display:block;color:#9e9698;text-transform:uppercase;letter-spacing:.1em;font-size:9px}.venue-id b{display:block;margin-top:7px;font-size:15px}.side-nav{display:grid;gap:5px;margin-top:24px}.side-nav button{border:0;background:transparent;color:#a9a1a3;border-radius:10px;padding:11px 12px;text-align:left;font-weight:700;font-size:13px}.side-nav button:hover,.side-nav button.active{background:#393435;color:#fff}.sidebar-note{margin-top:auto;background:#302c2d;border:1px solid rgba(255,255,255,.08);border-radius:13px;padding:14px;font-size:11px;color:#a9a1a3}.sidebar-note b{display:block;color:#fff;margin-bottom:4px}.workspace{padding:38px clamp(22px,4vw,54px) 60px;min-width:0}.workspace-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px}.workspace-head small{color:var(--red);font-weight:800;text-transform:uppercase;letter-spacing:.11em}.workspace-head h1{font-size:clamp(34px,4.3vw,54px);margin-top:9px}.workspace-head p{color:var(--muted);margin-top:8px}.plan-badge{flex:0 0 auto;background:var(--green-soft);color:var(--green);border-radius:999px;padding:9px 13px;font-size:11px;font-weight:800}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}.stat{background:#fff;border:1px solid var(--line);border-radius:17px;padding:20px}.stat small{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.09em}.stat b{display:block;font-family:var(--display);font-size:27px;margin-top:7px}.stat span{display:block;color:var(--green);font-size:10px;margin-top:4px}.section-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-top:38px}.section-title h2{font-size:25px}.section-title p{font-size:12px;color:var(--muted)}.module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}.module-card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:22px;min-height:220px;display:flex;flex-direction:column;position:relative;overflow:hidden}.module-card.enabled:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(37,31,32,.07)}.module-card.disabled{background:#eeebe9;color:#8e8789}.module-icon{width:42px;height:42px;border-radius:13px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font-family:var(--display);font-weight:800}.disabled .module-icon{background:#e1dcda;color:#9e9698}.module-status{position:absolute;right:18px;top:18px;border-radius:999px;padding:5px 8px;background:var(--green-soft);color:var(--green);font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}.disabled .module-status{background:#e2dcda;color:#847c7e}.module-card h3{font-size:20px;margin-top:20px}.module-card p{color:var(--muted);font-size:12px;margin-top:8px}.module-card .btn{margin-top:auto;width:100%}.activity-layout{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:16px}.activity,.team{background:#fff;border:1px solid var(--line);border-radius:19px;padding:22px}.activity-row{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.activity-row:last-child{border-bottom:0}.activity-mark{width:34px;height:34px;border-radius:11px;background:var(--red-soft);color:var(--red);display:grid;place-items:center;font-weight:800;font-size:11px}.activity-copy{min-width:0;flex:1}.activity-copy b{display:block;font-size:12px}.activity-copy span{display:block;color:var(--muted);font-size:10px;margin-top:2px}.activity-time{color:var(--muted);font-size:10px}.team h3,.activity h3{font-size:18px}.team p{color:var(--muted);font-size:12px;margin-top:7px}.team-list{display:grid;gap:9px;margin-top:17px}.member{display:flex;align-items:center;gap:10px;background:#faf8f7;border-radius:11px;padding:10px}.member-avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:var(--dark);color:#fff;font-size:9px;font-weight:800}.member b{font-size:11px}.member span{display:block;color:var(--muted);font-size:9px}.toast{position:fixed;right:20px;bottom:20px;background:var(--dark);color:#fff;border-radius:12px;padding:13px 17px;font-size:12px;z-index:30;opacity:0;transform:translateY(60px);transition:.22s}.toast.show{opacity:1;transform:none}
+@media(max-width:980px){.login-shell{grid-template-columns:1fr}.login-story{min-height:440px}.portal-layout{grid-template-columns:82px 1fr}.venue-id b,.venue-id small,.side-nav button span,.sidebar-note{display:none}.side-nav button{text-align:center}.stats{grid-template-columns:repeat(2,1fr)}.module-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.prototype-banner{font-size:10px}.login-story{min-height:350px;padding:34px 25px}.brand-logo{width:150px}.story-copy h1{font-size:44px}.story-foot{display:none}.login-panel{padding:24px 16px}.login-card{padding:25px 20px}.topbar{padding:0 15px}.topbar-logo{width:132px}.workspace-chip{display:none}.portal-layout{display:block}.sidebar{display:none}.workspace{padding:28px 16px 45px}.workspace-head{display:block}.plan-badge{display:inline-block;margin-top:14px}.stats{grid-template-columns:1fr 1fr;gap:9px}.stat{padding:16px}.module-grid,.activity-layout{grid-template-columns:1fr}.module-card{min-height:205px}.top-actions .btn{padding:9px 11px;font-size:11px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="prototype-banner"><b>Interactive partner-portal prototype.</b> Production login requires Turso and server-side authentication.</div>
+<section class="login-shell" id="loginView">
+  <div class="login-story">
+    <a href="courtconnect.html" aria-label="Back to Connect and Play"><img class="brand-logo" src="connect-play-logo-v1.png" alt="Connect &amp; Play"></a>
+    <div class="story-copy">
+      <small>One account. Every venue tool.</small>
+      <h1>Run your venue in one <span>connected</span> workspace.</h1>
+      <p>Partners see only the booking, queueing, and tournament products included in their Connect&amp;Play subscription.</p>
+      <div class="story-modules"><span>Booking management</span><span>Live queueing</span><span>Tournament software</span></div>
+    </div>
+    <div class="story-foot">Secure organization workspaces designed for growing sports venues.</div>
+  </div>
+  <div class="login-panel">
+    <form class="login-card" id="loginForm">
+      <h2>Partner login</h2>
+      <p>Preview how each subscribed venue sees its own workspace.</p>
+      <div class="demo-note">Demo mode: choose one of five sample partners. No real password is checked in this ZIP.</div>
+      <div class="field"><label for="partnerSelect">Partner workspace</label><select id="partnerSelect" required></select></div>
+      <div class="field"><label for="email">Work email</label><input id="email" type="email" value="manager@redcourt.example" required autocomplete="username"></div>
+      <div class="field"><label for="password">Password</label><input id="password" type="password" value="prototype" required autocomplete="current-password"></div>
+      <button class="btn btn-red login-submit" type="submit">Open partner workspace</button>
+      <div class="login-links"><a href="courtconnect.html">← Main website</a><a href="mailto:hello@connectandplay.ph">Need access?</a></div>
+    </form>
+  </div>
+</section>
+
+<section class="portal hidden" id="portalView">
+  <header class="topbar">
+    <a href="courtconnect.html"><img class="topbar-logo" src="connect-play-logo-v1.png" alt="Connect &amp; Play"></a>
+    <div class="top-actions"><div class="workspace-chip"><span class="workspace-dot"></span><span id="topPartnerName"></span></div><button class="btn btn-light" id="signOut" type="button">Sign out</button></div>
+  </header>
+  <div class="portal-layout">
+    <aside class="sidebar">
+      <div class="venue-id"><small>Partner workspace</small><b id="sidePartnerName"></b></div>
+      <nav class="side-nav" aria-label="Partner workspace"><button class="active" type="button">⌂ <span>Overview</span></button><button type="button">▣ <span>Operations</span></button><button type="button">◫ <span>Customers</span></button><button type="button">↗ <span>Reports</span></button><button type="button">⚙ <span>Settings</span></button></nav>
+      <div class="sidebar-note"><b>Connect&amp;Play support</b>Subscription changes and venue setup are handled by your account team.</div>
+    </aside>
+    <main class="workspace">
+      <div class="workspace-head"><div><small>Partner dashboard</small><h1 id="welcomeTitle"></h1><p id="workspaceSummary"></p></div><div class="plan-badge" id="planBadge"></div></div>
+      <div class="stats"><article class="stat"><small>Today’s bookings</small><b id="bookingStat">—</b><span>Live venue activity</span></article><article class="stat"><small>Players waiting</small><b id="queueStat">—</b><span>Queue status</span></article><article class="stat"><small>Active events</small><b id="tournamentStat">—</b><span>Tournament schedule</span></article><article class="stat"><small>Team members</small><b id="teamStat">—</b><span>Workspace access</span></article></div>
+      <div class="section-title"><div><h2>Your software</h2><p>Access is based on this partner’s active subscription.</p></div></div>
+      <div class="module-grid" id="moduleGrid"></div>
+      <div class="section-title"><div><h2>Workspace activity</h2><p>Sample partner-isolated activity for this prototype.</p></div></div>
+      <div class="activity-layout"><section class="activity"><h3>Recent updates</h3><div id="activityList"></div></section><aside class="team"><h3>Venue team</h3><p>Each team member receives an individual role—never a shared staff password.</p><div class="team-list" id="teamList"></div></aside></div>
+    </main>
+  </div>
+</section>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const partners=[
+ {id:'redcourt',name:'REDCOURT Sports Center',plan:'Complete suite',modules:['booking','queueing','tournament'],stats:[18,7,2,8]},
+ {id:'northside',name:'Northside Badminton Hub',plan:'Operations plan',modules:['booking','queueing'],stats:[12,4,0,5]},
+ {id:'rallypoint',name:'Rally Point Courts',plan:'Events plan',modules:['booking','tournament'],stats:[21,0,3,6]},
+ {id:'courthouse',name:'The Court House',plan:'Queue plan',modules:['queueing'],stats:[0,11,0,4]},
+ {id:'metro',name:'Metro Sports Arena',plan:'Complete suite',modules:['booking','queueing','tournament'],stats:[34,14,4,12]}
+];
+const products={
+ booking:{icon:'BK',title:'Booking management',copy:'Control court availability, reservations, customer details, schedules, and booking status.'},
+ queueing:{icon:'QU',title:'Queueing management',copy:'Manage walk-ins, check-ins, active courts, staged games, player calls, and wait times.'},
+ tournament:{icon:'TR',title:'Tournament software',copy:'Create events, accept registrations, organize brackets, record results, and publish updates.'}
+};
+const partnerSelect=document.getElementById('partnerSelect'),loginView=document.getElementById('loginView'),portalView=document.getElementById('portalView'),toast=document.getElementById('toast');
+partners.forEach(partner=>partnerSelect.add(new Option(partner.name,partner.id)));
+function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+function renderWorkspace(partner){
+ document.getElementById('topPartnerName').textContent=partner.name;document.getElementById('sidePartnerName').textContent=partner.name;document.getElementById('welcomeTitle').textContent='Welcome, '+partner.name+'.';document.getElementById('workspaceSummary').textContent='Your venue tools, team activity, and daily operations are organized in one private workspace.';document.getElementById('planBadge').textContent=partner.plan;
+ ['bookingStat','queueStat','tournamentStat','teamStat'].forEach((id,index)=>document.getElementById(id).textContent=partner.stats[index]);
+ const moduleGrid=document.getElementById('moduleGrid');moduleGrid.replaceChildren();
+ Object.entries(products).forEach(([key,product])=>{const enabled=partner.modules.includes(key),card=document.createElement('article');card.className='module-card '+(enabled?'enabled':'disabled');card.innerHTML='<div class="module-icon">'+product.icon+'</div><span class="module-status">'+(enabled?'Active':'Not included')+'</span><h3>'+product.title+'</h3><p>'+product.copy+'</p><button class="btn '+(enabled?'btn-dark':'btn-light')+'" type="button" '+(enabled?'':'disabled')+'>'+(enabled?'Open software':'Contact sales')+'</button>';if(enabled)card.querySelector('button').addEventListener('click',()=>showToast(product.title+' demo selected.'));moduleGrid.append(card)});
+ const activity=[['BK','New court reservation','A customer requested tomorrow at 7:00 PM'],['QU','Queue updated','Two players were assigned to the next game'],['TR','Event registration','A doubles team joined the weekend bracket']].filter((_,index)=>partner.modules.includes(['booking','queueing','tournament'][index]));document.getElementById('activityList').innerHTML=activity.length?activity.map(item=>'<div class="activity-row"><div class="activity-mark">'+item[0]+'</div><div class="activity-copy"><b>'+item[1]+'</b><span>'+item[2]+'</span></div><div class="activity-time">Now</div></div>').join(''):'<div class="activity-row"><div class="activity-copy"><b>No module activity yet</b><span>Updates will appear after your tools are activated.</span></div></div>';
+ document.getElementById('teamList').innerHTML=[['AM','Alex M.','Owner'],['JR','Jamie R.','Manager'],['KS','Kai S.','Front desk']].map(member=>'<div class="member"><div class="member-avatar">'+member[0]+'</div><div><b>'+member[1]+'</b><span>'+member[2]+'</span></div></div>').join('');
+}
+document.getElementById('loginForm').addEventListener('submit',event=>{event.preventDefault();if(!event.currentTarget.reportValidity())return;const partner=partners.find(item=>item.id===partnerSelect.value);renderWorkspace(partner);loginView.classList.add('hidden');portalView.classList.remove('hidden');window.scrollTo(0,0)});
+document.getElementById('signOut').addEventListener('click',()=>{portalView.classList.add('hidden');loginView.classList.remove('hidden');document.getElementById('password').value='prototype';window.scrollTo(0,0)});
+document.querySelectorAll('.side-nav button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.side-nav button').forEach(item=>item.classList.remove('active'));button.classList.add('active');showToast(button.textContent.trim()+' is a dashboard prototype.')}));
+</script>
+</body>
+</html>
